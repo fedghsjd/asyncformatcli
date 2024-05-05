@@ -1,17 +1,13 @@
-function pathSum(root, sum) {
-  if (!root) return [];
-  const result = [];
-  const path = [];
-  const traverse = (node, sum) => {
-    if (!node) return;
-    path.push(node.val);
-    if (!node.left && !node.right && sum === node.val) {
-      result.push([...path]);
-    }
-    traverse(node.left, sum - node.val);
-    traverse(node.right, sum - node.val);
-    path.pop();
-  };
-  traverse(root, sum);
-  return result;
-}
+const fibonacci = (n) => {
+  if (n <= 1) {
+    return n;
+  }
+  let prev = 0;
+  let curr = 1;
+  for (let i = 2; i <= n; i++) {
+    const next = prev + curr;
+    prev = curr;
+    curr = next;
+  }
+  return curr;
+};
