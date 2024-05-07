@@ -1,1 +1,3 @@
-const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
+const lcmRecursive = (a, b) => {
+  return (a * b) / gcdRecursive(a, b);
+};
