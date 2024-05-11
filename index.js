@@ -1,1 +1,10 @@
-const zip = (arr1, arr2) => arr1.map((el, i) => [el, arr2[i]]);
+function findMin(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left < right) {
+    const mid = Math.floor((left + right) / 2);
+    if (nums[mid] > nums[right]) left = mid + 1;
+    else right = mid;
+  }
+  return nums[left];
+}
